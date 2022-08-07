@@ -6,6 +6,7 @@ namespace test
 {
 public class BookTests
 {
+
     [Fact]
     public void BookGradeIsValid()
     {
