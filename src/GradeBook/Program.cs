@@ -5,25 +5,29 @@ namespace GradeBook
 {
     class Program
     {
-        //Main method and entry point of the application 
-        //args: arguments passed to the application 
-        //type of application: string array 
         static void Main(string[] args)
-        {
-            var book = new Book("School Grade Book"); 
+        {               
+            var book = new Book("Scott's Grade Book");
             book.AddGrade(89.1);
             book.AddGrade(90.5);
-            book.AddGrade(92.8);
             book.AddGrade(77.5);
-            book.ShowStatistics(); 
-
-       
             
-
-        }
+            var stats = book.GetStatistics();         
+            
+            Console.WriteLine($"The lowest grade is {stats.Low}");
+            Console.WriteLine($"The highest grade is {stats.High}");
+            Console.WriteLine($"The average grade is {stats.Average:N1}");            
+        }        
     }
 }
 
 /*
+Reference Type
+var b = new ook("Grades");
+- b holds a reference type (object) stored at specific location in memory  
+
+Value Type
+var x = 3; 
+- x holds 3 which is an int and at a value type 
 
 */
