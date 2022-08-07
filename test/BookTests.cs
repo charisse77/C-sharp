@@ -7,7 +7,7 @@ namespace test
 public class BookTests
 {
     [Fact] //attribute that tells Xunit which tests to run 
-    public void Test1()
+    public void BookCalculatesAnAverageGrade()
     {
         //arrange 
         var book = new Book(""); //initialize class Book 
@@ -29,4 +29,7 @@ public class BookTests
 }
 /*
 dotnet add reference <PROJECT_PATH> : references project on which we want to run tests 
+dotnet new sln: create new solution 
+dotnet sln add src\GradeBook\GradeBook.csproj 
+dotnet sln add test\test.csproj : add all files to a single solution file to build all projects at same time 
 */
