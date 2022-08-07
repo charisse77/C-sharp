@@ -6,6 +6,16 @@ namespace test
 {
 public class BookTests
 {
+    [Fact]
+    public void BookGradeIsValid()
+    {
+        var book = new Book("");
+        
+        Assert.Throws<ArgumentException>(() => book.AddGrade(101)); 
+        
+    }
+   
+
     [Fact] //attribute that tells Xunit which tests to run 
     public void BookCalculatesAnAverageGrade()
     {
@@ -21,7 +31,8 @@ public class BookTests
         //assert something about value computed inside of act 
         Assert.Equal(85.6, result.Average,1); //Assert.Equal(expected, actual, precision value)
         Assert.Equal(90.5, result.High,1); 
-        Assert.Equal(77.3, result.Low,1);  
+        Assert.Equal(77.3, result.Low,1); 
+        Assert.Equal('B',result.Letter); 
 
     }
 }
